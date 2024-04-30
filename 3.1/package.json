@@ -8,8 +8,11 @@
     "build": "rimraf ./dist && tsc",
     "start": "rimraf ./dist && tsc && nodemon dist/app.js",
     "dev": "npm run build && nodemon .\\dist\\app.js",
-    "go" : "rimraf ./dist && tsc && nodemon"
+    "go": "rimraf ./dist && tsc && nodemon"
   },
   "author": "Olha Hluboka",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
