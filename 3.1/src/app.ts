@@ -22,7 +22,34 @@ const button5:AnyButtonType = "Remove"
 // а иначе вызывается диалог Подтверждения, и результат нажатия на кнопку Да или Нет
 // в итоге попадет в функцию onConfirm, которая уже дальше решит что делать
 
-//type ConfirmationHandlingFormButton = FormButton & 
+type ConfirmationHandlingFormButton = FormButton & {
+    onConfirm ?: (dialogButton : DialogButtonType ) => void; 
+}
 
+let but1 : ConfirmationHandlingFormButton = {
+    type: "Add"
+}
+
+let but2 : ConfirmationHandlingFormButton = {
+    type: "Remove",
+
+    onConfirm: (button2) => {
+
+        console.log("Don`t remove now.")
+
+    }
+}
+
+let but3 : ConfirmationHandlingFormButton = {
+    type: "Buy",
+
+    onConfirm: (button1) => {
+
+        console.log("Buy it now.")
+
+    }
+
+
+}
 // .... НЕТ, не надо писать все эти диалоги формы кнопки, 
 // мы описываем чисто типы сейчас.
